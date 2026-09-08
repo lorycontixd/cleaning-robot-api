@@ -1,2 +1,5 @@
-# cleaning-robot-api
-REST API for remotely controlling a household cleaning robot on a tile grid. Python 3.13, FastAPI, Docker.
+# Cleaning Robot API
+
+A REST service that remotely controls a household cleaning robot: load a
+tile map, run cleaning sessions with a basic or premium robot model, and
+export session history as CSV.
