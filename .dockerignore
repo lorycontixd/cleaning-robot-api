@@ -1,0 +1,37 @@
+# Keep the build context small and deterministic. COPY steps in the Dockerfile
+# are explicit, so this mainly speeds up context transfer and prevents stray
+# files from ever entering the image.
+
+# Version control
+.git
+.gitignore
+
+# Local virtualenv (host-specific; the image builds its own)
+.venv
+
+# Python caches and build artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editor / IDE
+.vscode/
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Docs and scratch files not needed at runtime
+docs/
+*.docx
+~$*
+*.tmp
+
+# Agent instructions
+AGENTS.md
+CLAUDE.md

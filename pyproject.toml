@@ -1,8 +1,8 @@
 [project]
 name = "cleaning-robot-api"
-version = "0.1.0"
+version = "1.0.0"
 description = "REST API for remotely controlling a household cleaning robot on a tile grid"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 dependencies = [
     "fastapi>=0.115,<1.0",
     "uvicorn[standard]>=0.30,<1.0",
@@ -25,13 +25,13 @@ testpaths = ["tests"]
 addopts = "-q --strict-markers"
 
 [tool.ruff]
-target-version = "py311"
+target-version = "py312"
 line-length = 100
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
 
 [tool.mypy]
-python_version = "3.11"
+python_version = "3.12"
 packages = ["app"]
 strict = true
