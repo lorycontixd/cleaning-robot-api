@@ -49,7 +49,7 @@ def sample_map() -> Map:
         {
             Coordinate(0, 0): Tile(is_walkable=True, is_dirty=True),
             Coordinate(0, 1): Tile(is_walkable=False, is_dirty=False),
-            Coordinate(0, 2): Tile(is_walkable=False, is_dirty=True),
+            Coordinate(0, 2): Tile(is_walkable=False, is_dirty=False),
             Coordinate(1, 0): Tile(is_walkable=True, is_dirty=False),
             Coordinate(1, 1): Tile(is_walkable=True, is_dirty=True),
             Coordinate(1, 2): Tile(is_walkable=False, is_dirty=False),
