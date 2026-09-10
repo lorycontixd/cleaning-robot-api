@@ -1,6 +1,6 @@
 [project]
 name = "cleaning-robot-api"
-version = "1.1.0"
+version = "1.2.0"
 description = "REST API for remotely controlling a household cleaning robot on a tile grid"
 requires-python = ">=3.12"
 dependencies = [
@@ -30,8 +30,3 @@ line-length = 100
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
-
-[tool.mypy]
-python_version = "3.12"
-packages = ["app"]
-strict = true

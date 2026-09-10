@@ -30,7 +30,7 @@ docker build -t cleaning-robot .
 docker run --rm -p 8000:8000 cleaning-robot
 ```
 
-Note: the Docker build runs the test suite as part of the image build (`RUN pytest` in the [Dockerfile](Dockerfile)), so a failing test fails the build.
+NOTE: The test suite has not been included in the Docker image, because ideally the tests should run in a separate CI/CD pipeline or locally before building the image.
 
 ### Local - uv (recommended)
 
