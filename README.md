@@ -32,7 +32,7 @@ docker run --rm -p 8000:8000 cleaning-robot
 
 NOTE: The test suite has not been included in the Docker image, because ideally the tests should run in a separate CI/CD pipeline or locally before building the image.
 
-### Local - uv (recommended)
+### Local - uv
 
 ```bash
 uv sync --extra dev
