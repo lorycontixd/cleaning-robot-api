@@ -9,7 +9,8 @@ class SessionHistory:
         self.history.append(report)
 
     def get_history(self) -> list[SessionReport]:
-        return self.history
+        # return a copy so callers can't mutate the internal list
+        return list(self.history)
 
     def clear_history(self):
         self.history.clear()

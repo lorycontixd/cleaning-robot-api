@@ -106,7 +106,6 @@ Interactive API docs (Swagger UI) are available at [http://localhost:8000/docs](
 pytest           # test suite
 ruff check .     # lint
 ruff format .    # format
-mypy app         # strict type checking (configured in pyproject.toml)
 ```
 
 Under `uv`, prefix with `uv run` (e.g. `uv run pytest`).

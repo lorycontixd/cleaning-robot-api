@@ -26,8 +26,9 @@ dist/
 Dockerfile
 .dockerignore
 
-# Docs and scratch files not needed at runtime
+# Docs and media not needed at runtime
 docs/
+media/
 *.docx
 ~$*
 *.tmp

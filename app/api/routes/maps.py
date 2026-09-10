@@ -10,7 +10,11 @@ from app.storage.map_store import MapStore
 router = APIRouter(prefix="/map")
 
 
-@router.put("", response_model=UploadMapResponse)
+@router.put(
+    "",
+    response_model=UploadMapResponse,
+    responses={415: {"description": "The filename extension is not .txt or .json."}},
+)
 def get_maps(
     file: UploadFile = File(...),  # noqa: B008
     map_store: MapStore = Depends(get_map_store),  # noqa: B008

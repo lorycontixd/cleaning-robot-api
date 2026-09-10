@@ -187,7 +187,7 @@ class TestCollision:
         assert result.state == "error"
         assert result.error.code == "collision"
         assert result.final_position == {"x": 1, "y": 0}  # last known position, not target
-        assert result.error.position == Coordinate(2, 0)  # desired position
+        assert result.error.position == {"x": 2, "y": 0}  # desired position
         assert len(result.cleaned_tiles) == 2
         assert result.cleaned_tiles == [{"x": 0, "y": 0}, {"x": 1, "y": 0}]
         assert sample_23_map[0, 0].is_dirty is False
@@ -213,7 +213,7 @@ class TestCollision:
         assert result.state == "error"
         assert result.error.code == "collision"
         assert result.final_position == {"x": 0, "y": 0}  # last known position, not target
-        assert result.error.position == Coordinate(0, -1)  # desired position
+        assert result.error.position == {"x": 0, "y": -1}  # desired position
         assert len(result.cleaned_tiles) == 1
         assert result.cleaned_tiles == [{"x": 0, "y": 0}]
         assert sample_map[0, 0].is_dirty is False

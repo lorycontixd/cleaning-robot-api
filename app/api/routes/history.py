@@ -8,6 +8,11 @@ from app.storage.session_history import SessionHistory
 
 router = APIRouter(prefix="/history")
 
+
+class CSVResponse(Response):
+    media_type = "text/csv"
+
+
 _CSV_HEADERS = [
     "id",
     "started_at",
@@ -20,7 +25,7 @@ _CSV_HEADERS = [
 ]
 
 
-@router.get("")
+@router.get("", response_class=CSVResponse)
 def get_history(
     history: SessionHistory = Depends(get_session_history),  # noqa: B008
 ):
@@ -42,4 +47,4 @@ def get_history(
             ]
         )
 
-    return Response(content=output.getvalue(), media_type="text/csv")
+    return CSVResponse(content=output.getvalue())

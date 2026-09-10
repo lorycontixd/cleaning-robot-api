@@ -35,23 +35,6 @@ class Map:
             return self.tiles[coordinate]
         raise IndexError(f"Coordinate ({i}, {j}) is out of map bounds.")
 
-    @staticmethod
-    def generate_random(
-        rows: int,
-        cols: int,
-        walkable_probability: float = 0.8,
-        dirty_probability: float = 0.5,
-    ) -> "Map":
-        import random
-
-        tiles = {}
-        for y in range(rows):
-            for x in range(cols):
-                is_walkable = random.random() < walkable_probability
-                is_dirty = random.random() < dirty_probability if is_walkable else False
-                tiles[Coordinate(x, y)] = Tile(is_walkable=is_walkable, is_dirty=is_dirty)
-        return Map(rows, cols, tiles)
-
     @property
     def walkable_tiles(self) -> int:
         return sum(1 for tile in self.tiles.values() if tile.is_walkable)

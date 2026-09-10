@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from app.core.map import Coordinate
+from app.core.models.coordinate import CoordinateDict
 from app.core.models.robot import RobotModel
 
 
@@ -8,7 +8,7 @@ from app.core.models.robot import RobotModel
 class Error:
     code: str
     message: str
-    position: Coordinate
+    position: CoordinateDict
 
 
 @dataclass
@@ -20,7 +20,7 @@ class SessionReport:
     robot_model: RobotModel
     submitted_actions: int
     successful_steps: int
-    cleaned_tiles: list[dict[str, int]]
-    final_position: dict[str, int]
+    cleaned_tiles: list[CoordinateDict]
+    final_position: CoordinateDict
     duration_ms: int
     error: Error | None = None

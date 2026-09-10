@@ -95,13 +95,13 @@ class CleaningService:
             robot_model=robot,
             submitted_actions=len(actions),
             successful_steps=total_steps,
-            cleaned_tiles=[{"x": coord.x, "y": coord.y} for coord in cleaned_tiles],
+            cleaned_tiles=[coord.to_dict() for coord in cleaned_tiles],
             final_position=current.to_dict(),
             duration_ms=int((end_ts - start_ts).total_seconds() * 1000),
             error=Error(
                 code="collision",
                 message=self._build_error_message(error_reason),
-                position=error_position,
+                position=error_position.to_dict(),
             )
             if state == "error"
             else None,
