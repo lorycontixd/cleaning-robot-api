@@ -32,7 +32,7 @@ docker run --rm -p 8000:8000 cleaning-robot
 
 Note: the Docker build runs the test suite as part of the image build (`RUN pytest` in the [Dockerfile](Dockerfile)), so a failing test fails the build.
 
-### Local - uv (recommended)
+### Local - uv
 
 ```bash
 uv sync --extra dev
